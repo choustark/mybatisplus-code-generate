@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>MyBatis-Plus代码生成器</title>
-    <meta name="author" content="Erwin Feng"/>
+    <meta name="author" content="Choucj"/>
     <meta name="keyword" content="MyBatis-Plus, 代码生成器"/>
     <meta name="description" content="MyBatis-Plus代码生成器"/>
 
@@ -46,7 +46,7 @@
 
     <div class="header">
         <a target="_blank" href="https://fengwenyi.com?fs=mpcg">
-            <img class="logo" src="/static/images/logo.jpg" alt="logo"/>
+            <img class="logo" src="/static/images/logo.png" alt="logo"/>
         </a>
         <h1 class="title">MyBatis-Plus代码生成器</h1>
     </div>
@@ -89,6 +89,7 @@
                             <option value="oracle">Oracle</option>
                             <option value="sqlserver">SQL Server</option>
                             <option value="postgresql">Postgresql</option>
+                            <option value="dm">达梦数据库</option>
                         </select>
                     </div>
                 </div>
@@ -267,14 +268,14 @@
                                 <label class="layui-form-label">实体类</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternEntity" placeholder="请输入实体类文件名格式"
-                                           value="%sEntity" autocomplete="off" class="layui-input">
+                                           value="%s" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">mapper</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternMapper" placeholder="请输入Mapper文件名格式"
-                                           value="%sDao" autocomplete="off" class="layui-input">
+                                           value="%sMapper" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -289,14 +290,14 @@
                                 <label class="layui-form-label">service</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternService" placeholder="请输入service文件名格式"
-                                           value="%sRepository" autocomplete="off" class="layui-input">
+                                           value="%sService" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">service.impl</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternServiceImpl" placeholder="请输入Service Impl包名"
-                                           value="%sRepositoryImpl" autocomplete="off" class="layui-input">
+                                           value="%sServiceImpl" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
 
@@ -368,7 +369,7 @@
                                 <label class="layui-form-label">是否开启链式</label>
                                 <div class="layui-input-block">
                                     <input type="checkbox" name="lombokChainModel" lay-skin="switch" lay-text="开启|关闭"
-                                           value="true" checked>
+                                           value="false" checked>
                                 </div>
                             </div>
 
@@ -488,6 +489,7 @@
                             <option value="oracle">Oracle</option>
                             <option value="sqlserver">SQL Server</option>
                             <option value="postgresql">Postgresql</option>
+                            <option value="dm">达梦数据库</option>
                         </select>
                     </div>
                 </div>
@@ -519,17 +521,6 @@
             </form>
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="version">v<span th:text="${ version }"></span> <button id="btnUpgrade" type="button" class="layui-btn layui-btn-primary btn-upgrade">检查更新</button></div>
-        <div class="box-links">
-            <a target="_blank" href="https://github.com/fengwenyi/mybatis-plus-code-generator">源码</a>
-        </div>
-        <hr />
-        <div class="box-copyright">
-            Copyright &copy;2022 <a target="_blank" href="https://fengwenyi.com?fs=mpcg">Erwin Feng</a>
-        </div>
-    </footer>
 </div>
 </body>
 </html>

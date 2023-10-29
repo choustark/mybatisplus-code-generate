@@ -1,7 +1,7 @@
 package com.fengwenyi.codegenerator;
 
 /**
- * @author Erwin Feng
+ * @author chou
  * @since 2019-04-17 12:04
  */
 public class Config {

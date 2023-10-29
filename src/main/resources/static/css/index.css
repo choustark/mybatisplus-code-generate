@@ -21,14 +21,14 @@ html {
     left: -20px;
     content: '';
     z-index: -1;
-    /*background-image: url('https://api.dujin.org/bing/1366.php');*/
-    background-image: url('/static/images/bg.jpg');
+    /*background-image: url('http://api.qemao.com/api/pic/?type=pc');*/
+    background: rgba(26, 132, 147, 0.42);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: 100%;
     /*-webkit-filter: blur(10px);*/
     /*filter: blur(10px);*/
 }
@@ -134,14 +134,5 @@ html {
 }
 
 .footer .box-links a:hover {
-    text-decoration: underline;
-}
-
-.footer .box-copyright {
-
-}
-
-.footer .box-copyright a {
-    color: #777;
     text-decoration: underline;
 }

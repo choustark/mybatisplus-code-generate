@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: mybatis-plus-code-generator
+    name: mybatisplus-code-generator
   thymeleaf:
     enabled: true
     prefix: classpath:/templates/
@@ -21,7 +21,7 @@ logging:
     com.fengwenyi: debug
     com.baomidou: debug
 
-erwin:
+chou:
   app:
     name: @project.artifactId@
     version: @project.version@

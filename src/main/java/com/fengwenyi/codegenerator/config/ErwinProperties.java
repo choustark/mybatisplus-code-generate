@@ -5,12 +5,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author <a href="https://www.fengwenyi.com">Erwin Feng</a>
+ * @author chou
  * @since 2021-12-20
  */
 @Data
 @Configuration
-@ConfigurationProperties("erwin")
+@ConfigurationProperties("chou")
 public class ErwinProperties {
 
     private App app;

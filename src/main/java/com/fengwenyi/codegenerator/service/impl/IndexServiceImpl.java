@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author <a href="https://www.fengwenyi.com">Erwin Feng</a>
+ * @author chou
  * @since 2021-07-12
  */
 @Service
@@ -27,24 +27,14 @@ public class IndexServiceImpl implements IIndexService {
 
     @Override
     public ResponseTemplate<Void> codeGenerator(CodeGeneratorRequestVo requestVo) {
-
         CodeGeneratorBo bo = new CodeGeneratorBo();
-
         BeanUtils.copyProperties(requestVo, bo);
-
         handleDb(requestVo, bo);
         handleTable(requestVo, bo);
-
         return execute(bo);
 
     }
 
-    @Override
-    public String upgrade(String version) {
-        String url = "https://erwin-api.fengwenyi.com/erwin/app/upgrade?" +
-                "appCode=mybatis-plus-code-generator&version=" + version;
-        return HttpUtils.get(url);
-    }
 
     private ResponseTemplate<Void> execute(CodeGeneratorBo bo) {
         try {
@@ -78,7 +68,10 @@ public class IndexServiceImpl implements IIndexService {
         } else if (DbType.getDbType(requestVo.getDbTypeName()) == DbType.POSTGRE_SQL) {
             dbUrl = "jdbc:postgresql://" + requestVo.getHost() + "/" + requestVo.getDbName();
             driver = "org.postgresql.Driver";
-        } else {
+        } else if (DbType.getDbType(requestVo.getDbTypeName()) == DbType.DM){
+            dbUrl = "jdbc:dm://" + requestVo.getHost() + "/" + requestVo.getDbName();
+            driver = "dm.jdbc.driver.DmDriver";
+        }else {
             Asserts.fail("暂不支持的数据库类型");
         }
         bo.setDbUrl(dbUrl).setDriver(driver).setUsername(username).setPassword(password);
